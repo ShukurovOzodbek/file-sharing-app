@@ -1,7 +1,6 @@
 <template>
     <div class="w-full h-screen flex justify-center">
-        <div class="flex flex-col gap-4 w-11/12 my-5">
-            <img src="~/public/images/flowers.jpg" class="w-full h-52 object-cover rounded-2xl" alt="">
+        <div class="flex flex-col gap-4 w-11/12 justify-center">
             <div class="flex flex-col gap-2 mb-5">
                 <h1 class="text-4xl font-bold mb-5">Welcome Back 👋</h1>
                 <span class="text-lg">Today is a new day. It's your day. You shape it. <br> Sign in to start managing your projects.</span>
