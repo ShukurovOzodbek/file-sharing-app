@@ -14,7 +14,7 @@
             </form>
             <div class="grid grid-cols-3 gap-3 items-center justify-center">
                 <div class="border border-[#CFDFE2] h-0 w-full"></div>
-                <span class="text-[#294957] text-lg">Or sign in with</span>
+                <span class="text-[#294957] text-lg text-center">Or sign in with</span>
                 <div class="border border-[#CFDFE2] h-0 w-full"></div>
             </div>
             <div class="flex gap-4 items-center">
