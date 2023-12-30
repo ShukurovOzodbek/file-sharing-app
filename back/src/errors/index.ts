@@ -10,3 +10,10 @@ export const InvalidPassword = (pass: string) => {
     
     return message;
 }
+
+export const InvalidEmail = () => {
+    return {
+        message: 'Не валидная почта',
+        reason: 3
+    };
+}

@@ -8,6 +8,7 @@ import http from 'http';
 import mongoose from "./src/mongoose";
 import usersService from "./src/routes/users.service";
 import dotenv from 'dotenv';
+import authentication from "./src/authentication";
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
 app.use('/users', usersService);
+app.use('/authentication', authentication);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
