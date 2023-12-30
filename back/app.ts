@@ -9,6 +9,7 @@ import mongoose from "./src/mongoose";
 import usersService from "./src/routes/users.service";
 import dotenv from 'dotenv';
 import authentication from "./src/authentication";
+import cors from 'cors';
 
 const app = express();
 
@@ -20,6 +21,7 @@ dotenv.config();
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

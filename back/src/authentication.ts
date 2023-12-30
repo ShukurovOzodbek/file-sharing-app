@@ -19,13 +19,17 @@ router.post('/', async (req, res) => {
     }
     
     let user = await Users.findOne({email: body.email});
+
+    if (!user) {
+        return res.status(400).json({message: 'Пользователь не найден'});
+    }
     
     const isValidPass = bcrypt.compareSync(body.password, user.password);
     
     if (!isValidPass) {
         return res.status(400).json(InvalidPassword(body.password));
     }
-    
+
     const token = createToken(user);
     
     user = removeKey('password', user);
