@@ -1,6 +1,7 @@
 <template>
     <button class="w-full bg-light-blue rounded-lg p-3.5 text-xl font-bold text-white">
-        {{ props.text }}
+        <span v-if="!isLoading">{{ props.text }}</span>
+        <loader v-else/>
     </button>
 </template>
 
