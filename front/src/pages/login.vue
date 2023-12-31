@@ -51,13 +51,13 @@ const errors: Ref<any> = ref({});
 const schema = ref({
     email: {
         pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-        default: 'Заполните поле для почты',
-        message: 'Пожалуйста перепроверьте поле для почты',
+        default: 'Заполните поле для почты.',
+        message: 'Пожалуйста перепроверьте поле для почты.',
     },
     password: {
         pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
-        default: 'Заполните поле для пароля',
-        message: 'Длина пароля должно состовлять не менее 8 симвлоов',
+        default: 'Заполните поле для пароля.',
+        message: 'В пароле должно быть 8 символов, минимум одана Загланая буква.',
     }
 });
 
@@ -68,14 +68,14 @@ async function submit() {
 
     if (data.isError) {
         isLoading.value = false;
-        errors.value = data
-        useToast('error').open();
-        return;
+        errors.value = data;
+        return useToast('error').open();
     }
 
     login(user.value.password, user.value.email).then((res) => {
         const token = useCookie('token');
         token.value = res.data.accessToken;
+        navigateTo('/');
     }).catch((e) => {
         errors.value.password = e.response.data.message;
         useToast('error').open();
