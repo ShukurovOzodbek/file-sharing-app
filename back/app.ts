@@ -3,7 +3,6 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import router from './src/routes';
 import http from 'http';
 import mongoose from "./src/mongoose";
 import usersService from "./src/routes/users.service";
@@ -26,7 +25,6 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', router);
 app.use('/users', usersService);
 app.use('/authentication', authentication);
 
